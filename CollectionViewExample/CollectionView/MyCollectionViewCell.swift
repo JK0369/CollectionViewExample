@@ -33,6 +33,7 @@ class MyCollectionViewCell: UICollectionViewCell {
         dataLabel.textColor = .label
         dataLabel.textAlignment = .center
 
+        backgroundColor = .lightGray
         contentView.addSubview(dataLabel)
         dataLabel.snp.makeConstraints { make in
             make.edges.equalTo(safeAreaLayoutGuide)

@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         /// MyCollectionView()로 단순히 초기화하면 에러가 나므로 MyCollectionView(frame:collectionViewLayout:) 초기화 사용
         /// 만약 collectionViewLayer에 UICollectionViewLayout() 그대로 넣으면 `cellForItemAt`가 불리지 않으므로 주의
         myCollectionView = MyCollectionView(frame: .zero, collectionViewLayout: collectionViewLayer)
-        myCollectionView.backgroundColor = .lightGray
+        myCollectionView.backgroundColor = .secondarySystemBackground
         view.addSubview(myCollectionView)
 
         myCollectionView.snp.makeConstraints { make in
@@ -59,7 +59,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     /// sizeForItemAt
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 120)
+        return UICollectionViewFlowLayout.automaticSize
     }
 
     /// numberOfItemsInSection
